@@ -6,7 +6,7 @@ This endpoint accepts users username, password and the clients name. The client 
 
 2. http://127.0.0.1:8000/api/artists/
 
-This endpoint accepts the artists name link of their work and the platformm of their work such as Youtube, Instagram or others from a dropdown list of choices. The artist can be searched by their name using the filter search bar.
+This endpoint accepts the artists name link of their work and the platformm of their work such as Youtube, Instagram or Others from a dropdown list of choices. The artist can be searched by their name using the filter search bar. This is implemented using SearchFilter from rest_frameworks.filters. 
 
 3. http://127.0.0.1:8000/api/works/
 
