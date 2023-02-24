@@ -2,7 +2,7 @@
 
 1. Registet API endpoint : http://127.0.0.1:8000/api/register/
 
-This endpoint accepts users username, password and the clients name. The client is related to the User model using Foreign key relation.
+This endpoint is for registering the user, it accepts user's username, password and the clients name. The client is related to the User model using Foreign key relation.
 
 2. http://127.0.0.1:8000/api/artists/
 
