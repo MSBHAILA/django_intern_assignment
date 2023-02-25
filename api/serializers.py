@@ -35,7 +35,7 @@ class WorkSerializer(serializers.ModelSerializer):
 
 
 class ArtistSerializer(serializers.ModelSerializer):
-    works = WorkSerializer()
+    works = WorkSerializer(many=True)
 
     class Meta:
         model = Artist
@@ -44,7 +44,7 @@ class ArtistSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         works_data = validated_data.pop('works')
         artist = Artist.objects.create(**validated_data)
-        work = Work.objects.create(**works_data)
-
-        artist.works.add(work)
+        for work_data in works_data:
+            work = Work.objects.create(**work_data)
+            artist.works.add(work)
         return artist
