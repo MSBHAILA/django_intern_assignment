@@ -14,8 +14,8 @@ class ClientCreate(generics.CreateAPIView):
 class WorkList(generics.ListAPIView):
     serializer_class = WorkSerializer
     queryset = Work.objects.all()
-    filter_backends = (DjangoFilterBackend, )
-    filter_fields = ('work_type',)
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['work_type', ]
 
 
 class ArtistList(generics.ListCreateAPIView):
